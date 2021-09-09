@@ -1,0 +1,33 @@
+<div id="page">
+  <div data-component="Hello">
+    <input ref="name" type="text">
+
+    <button @click="greet()">Greet</button>
+    <br>
+    <br>
+    <span ref="output"></span>
+  </div>
+  <hr>
+  <div data-component="Widget">
+    <h4>Enter widget SKU</h4>
+    <input type="text" @blur="check($event.target.value)">
+    <div ref="errorMessage" style="color: #C00"></div>
+  </div>
+  <hr>
+  <div data-component="Slideshow">
+    <button @click="goTo(0)">First</button>
+    <button @click="previous()"> ← </button>
+    <button @click="next()"> → </button>
+    <button @click="goTo(3)">Last</button>
+    <div ref="slide" style="font-size: 4em;">🐵</div>
+  </div>
+  <hr>
+ <div data-component="Reveal">
+    <button @click="toggle()">Toggle</button>
+    <button @click="show()">Show</button>
+    <button @click="hide()">Hide</button>
+
+    <p :ref="el => { items[0] = el }" class="hidden">Hey 👋</p>
+    <p :ref="el => { items[1] = el }" class="hidden">You can have multiple items</p>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div id="page">
+  <div data-controller="hello">
+    <input data-hello-target="name" type="text">
+
+    <button data-action="click->hello#greet">
+      Greet
+    </button>
+    <br>
+    <br>
+    <span data-hello-target="output"></span>
+  </div>
+
+  <hr>
+  <div data-controller="widget">
+    <h4>Enter widget SKU</h4>
+    <input type="text" data-widget-target="sku" data-action="blur->widget#check">
+    <div data-widget-target="error" style="color: #C00"></div>
+  </div>
+  <hr>
+  <div data-controller="slideshow" data-slideshow-index-value="0">
+    <button data-action="slideshow#first">First</button>
+    <button data-action="slideshow#previous"> ← </button>
+    <button data-action="slideshow#next"> → </button>
+    <button data-action="slideshow#last">Last</button>
+
+    <div data-slideshow-target="slide" style="font-size: 4em;">🐵</div>
+    <div data-slideshow-target="slide" style="font-size: 4em;">🙈</div>
+    <div data-slideshow-target="slide" style="font-size: 4em;">🙉</div>
+    <div data-slideshow-target="slide" style="font-size: 4em;">🙊</div>
+  </div>
+  <hr>
+  <div data-controller="reveal" data-reveal-hidden-class="hidden">
+    <button data-action="click->reveal#toggle">Toggle</button>
+    <button data-action="click->reveal#show">Show</button>
+    <button data-action="click->reveal#hide">Hide</button>
+
+    <p data-reveal-target="item" class="hidden">Hey 👋</p>
+    <p data-reveal-target="item" class="hidden">You can have multiple items</p>
+  </div>
+</div>
